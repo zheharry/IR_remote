@@ -24,6 +24,8 @@
  # THE SOFTWARE.
  ##
 
+import sys
+sys.path.append('/storage/downloads/python')
 import epd2in7
 from PIL import Image
 from PIL import ImageFont
@@ -57,12 +59,17 @@ def weather():
     day2  = forecast[2]
     return (today, day1, day2)
 
-sunny  = Image.open('sunny.bmp')
-night  = Image.open('night.bmp')
-cloudy = Image.open('cloudy.bmp')
-haze   = Image.open('haze.bmp')
-rain   = Image.open('rain.bmp')
-showers= Image.open('showers.bmp')
+# static resources
+sunny  = Image.open('/storage/downloads/python/sunny.bmp')
+night  = Image.open('/storage/downloads/python/night.bmp')
+cloudy = Image.open('/storage/downloads/python/cloudy.bmp')
+haze   = Image.open('/storage/downloads/python/haze.bmp')
+rain   = Image.open('/storage/downloads/python/rain.bmp')
+showers= Image.open('/storage/downloads/python/showers.bmp')
+
+font48 = ImageFont.truetype('/storage/downloads/python/FreeMonoBold.ttf', 48)
+font22 = ImageFont.truetype('/storage/downloads/python/FreeMonoBold.ttf', 22)
+font18 = ImageFont.truetype('/storage/downloads/python/FreeMonoBold.ttf', 18)
 
 def weather_cond(text):
 
@@ -76,13 +83,6 @@ def weather_cond(text):
 def main():
     epd = epd2in7.EPD()
     epd.init()
-
-    # static resources
-    #intel = Image.open('intel.bmp').resize((100,100))
-    
-    font48 = ImageFont.truetype('FreeMonoBold.ttf', 48)
-    font22 = ImageFont.truetype('FreeMonoBold.ttf', 22)
-    font18 = ImageFont.truetype('FreeMonoBold.ttf', 18)
 
     # For simplicity, the arguments are explicit numerical coordinates
     image = Image.new('1', (epd2in7.EPD_HEIGHT, epd2in7.EPD_HEIGHT), 255)    # 255: clear the image with white
@@ -132,12 +132,11 @@ def main():
     draw.line((0, 184, 264, 184), fill = 0)
 
     # others
-    #image.paste(intel, (66, 166))
-
     #draw.arc((90, 190, 150, 250), 0, 360, fill = 0)
     #draw.chord((90, 120, 150, 180), 0, 360, fill = 0)
     #draw.rectangle((10, 200, 50, 250), fill = 0)
 
+    #image.resize((epd2in7.EPD_HEIGHT, epd2in7.EPD_WIDTH)).save('result.bmp')
     image = image.rotate(90).resize((epd2in7.EPD_WIDTH, epd2in7.EPD_HEIGHT))
 
     epd.display_frame(epd.get_frame_buffer(image))
