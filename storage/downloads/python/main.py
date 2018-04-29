@@ -33,7 +33,7 @@ from datetime import datetime, timedelta
 import urllib2, urllib, json
 
 location = 'taipei'
-#https_proxy = 'http://proxy-chain.intel.com:912'
+#https_proxy = 'http://IP:PORT'
 
 def weather():
     # proxy
