@@ -1,4 +1,5 @@
 **Raspberry Pi 3B+ home project.**
+![result](storage/downloads/python/result.jpg)
 
 Hardware:
 - RPi 3B+
