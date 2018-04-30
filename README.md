@@ -9,11 +9,11 @@ Hardware:
 - RPi 3B+ chassis
 - IR receiver/tranmitter, blue wires, breadboard, and resistors.
 - IR controller (any spare TV or home theater controller will do)
-- USB audio with audio output and mac input
+- USB audio with audio output and mac input, any length of audio cable
 - bluetooth audio speaker
 - NFC reader/cards
 - HDMI cable to TV or panel
-- 5V/2A power adapter (official says it requires 5V/2.4A ?)
+- 5V/2A power adapter or power bank (official says it requires 5V/2.4A ?)
 - Two 18650 battery with a box that powers Arduino Uno (around 7V that inputs to jack, not USB)
 - Ethernet Cat 5 cable
 
