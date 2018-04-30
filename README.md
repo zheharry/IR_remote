@@ -46,6 +46,11 @@ Let's go
   - control lights, air conditioner
   - **e-paper tasks**
   - install spidev.so for python. prepare a development environment and package.mk to build it.
+  ```
+  harry@vm:~/src$ git clone https://github.com/LibreELEC/LibreELEC.tv.git
+  harry@vm:~/src$ cd LibreELEC.tv
+  harry@vm:~/src/LibreELEC.tv$ scripts/build spidev
+  ```
   - update python version to support partial refresh
   - make weather yahoo magic on e-paper
   - more key info on the screen
