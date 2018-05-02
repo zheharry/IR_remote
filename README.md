@@ -51,7 +51,7 @@ Let's go
   harry@vm:~/src$ cd LibreELEC.tv
   harry@vm:~/src/LibreELEC.tv$ scripts/build spidev
   ```
-  - update python version to support partial refresh http://benkrasnow.blogspot.my/2017/10/fast-partial-refresh-on-42-e-paper.html not sure if 2.7 panel will work, waveshare website didnt have it.
+  - partial refresh is not support, according to waveshare website.
   - make weather yahoo magic on e-paper
   - more key info on the screen
   - **audio tasks**
