@@ -72,6 +72,10 @@ Let's go
   while True:  
       pass
   ```
+  ```
+  systemctl enable in
+  systemctl start in
+  ```
   - **IR tasks**
   - add your IR controller profile (e.g. pioneer) to /storage/.config/rc_keymaps/pioneer. remember to follow the link: https://wiki.libreelec.tv/infrared_remotes
   - /storage/.config/rc_maps.cfg:
