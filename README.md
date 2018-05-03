@@ -33,6 +33,45 @@ Let's go
   dtparam=spi=on
   dtparam=i2c1=on
   ```
+  - **GPIO tasks**
+  - install /storage/.config/system.d/in.service
+  ```
+  [Unit]
+  Description = GPIO monitor
+
+  [Service]
+  Type = idle
+  ExecStart = /storage/downloads/python/in.py
+
+  [Install]
+  WantedBy = multi-user.target
+  ```
+  - /storage/downloads/python/in.py
+  ```
+  #!/usr/bin/python
+  import os, sys
+  sys.path.append('/storage/.kodi/addons/virtual.rpi-tools/lib')
+  import RPi.GPIO as GPIO
+  
+  GPIO.setmode(GPIO.BCM)
+  GPIO.setup( 5, GPIO.IN, pull_up_down=GPIO.PUD_UP)
+  GPIO.setup( 6, GPIO.IN, pull_up_down=GPIO.PUD_UP)
+  GPIO.setup(13, GPIO.IN, pull_up_down=GPIO.PUD_UP)
+  GPIO.setup(19, GPIO.IN, pull_up_down=GPIO.PUD_UP)
+  
+  def my_callback(channel):
+      if channel == 5:
+          os.system('shutdown now')
+      #print "falling edge detected on %d" % channel
+      
+  GPIO.add_event_detect( 5, GPIO.FALLING, callback=my_callback, bouncetime=300)
+  GPIO.add_event_detect( 6, GPIO.FALLING, callback=my_callback, bouncetime=300)
+  GPIO.add_event_detect(13, GPIO.FALLING, callback=my_callback, bouncetime=300)
+  GPIO.add_event_detect(19, GPIO.FALLING, callback=my_callback, bouncetime=300)
+  
+  while True:  
+      pass
+  ```
   - **IR tasks**
   - add your IR controller profile (e.g. pioneer) to /storage/.config/rc_keymaps/pioneer. remember to follow the link: https://wiki.libreelec.tv/infrared_remotes
   - /storage/.config/rc_maps.cfg:
