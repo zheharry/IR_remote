@@ -1,0 +1,9 @@
+[Unit]
+Description = GPIO monitor
+
+[Service]
+Type = idle
+ExecStart = /storage/downloads/python/in.py
+
+[Install]
+WantedBy = multi-user.target
