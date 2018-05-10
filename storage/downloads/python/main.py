@@ -77,8 +77,10 @@ def weather_cond(text):
         return cloudy
     if ('Showers' in text):
 	return showers
-    if ('Showers' in text) or ('storms' in text) or ('Rain' in text):
+    if ('storms' in text) or ('Rain' in text):
         return rain
+    if ('Sunny' in text):
+	return sunny
 
 def main():
     epd = epd2in7.EPD()
