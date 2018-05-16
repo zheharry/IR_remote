@@ -28,6 +28,7 @@ import epdif
 from PIL import Image
 from PIL import ImageDraw
 from PIL import ImageFont
+sys.path.append('/storage/.kodi/addons/virtual.rpi-tools/lib')
 import RPi.GPIO as GPIO
 
 # Display resolution
