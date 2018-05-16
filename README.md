@@ -25,6 +25,7 @@ Software:
 
 Let's go
 - LibreElec customization
+  - add add-ons: Rasberry Pi Tools / System Tools / Adafruit Libraries
   - disable CEC
   - enable bluetooth
   - enable devices by appending lines to /flash/config.txt. need to follow the instructions to overwrite it on /flash folders. https://wiki.libreelec.tv/config.txt
