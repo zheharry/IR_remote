@@ -88,6 +88,7 @@ Let's go
   ir-keytable -a /storage/.config/rc_maps.cfg
   ```
   - control lights, air conditioner
+  - use Arduino Uno and connects to it with USB cable. https://oscarliang.com/connect-raspberry-pi-and-arduino-usb-cable/
   - **e-paper tasks**
   - install spidev.so for python. prepare a development environment and package.mk to build it.
   ```
