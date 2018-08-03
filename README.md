@@ -89,6 +89,7 @@ Let's go
   ```
   - control lights, air conditioner
   - use Arduino Uno and connects to it with USB cable. https://oscarliang.com/connect-raspberry-pi-and-arduino-usb-cable/
+  - alternative way is connecting IR blaster to RPi directly and use https://github.com/bschwind/ir-slinger
   - **e-paper tasks**
   - install spidev.so for python. prepare a development environment and package.mk to build it.
   ```
